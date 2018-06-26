@@ -34,7 +34,7 @@ export default class App extends React.Component {
     };
   }
   render() {
-    const { inputTet, listText, repeatCount, enabledTimeSlicing } = this.state;
+    const { inputText, listText, repeatCount, enabledTimeSlicing } = this.state;
     return (
       <section>
         <Header>TimeSlicing App</Header>
@@ -66,12 +66,12 @@ export default class App extends React.Component {
         </div>
         <p>Input some text!</p>
         <InputText
-          value={inputTet}
+          value={inputText}
           onChange={({ target: { value } }) => {
-            this.setState(() => ({ inputTet: value }));
+            this.setState(() => ({ inputText: value }));
             const wrapper = enabledTimeSlicing
               ? requestAnimationFrame
-              : cb => cb();
+              : (cb) => cb();
             wrapper(() => {
               this.setState(() => ({ listText: value }));
             });
