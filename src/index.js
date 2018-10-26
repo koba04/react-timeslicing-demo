@@ -3,11 +3,9 @@ import ReactDOM from "react-dom";
 
 import App from "./App";
 
-const AsyncMode = React.unstable_AsyncMode;
-
 ReactDOM.render(
-  <AsyncMode>
+  <React.ConcurrentMode>
     <App />
-  </AsyncMode>,
+  </React.ConcurrentMode>,
   document.getElementById("js-app")
 );

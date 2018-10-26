@@ -71,7 +71,7 @@ export default class App extends React.Component {
             this.setState(() => ({ inputText: value }));
             const wrapper = enabledTimeSlicing
               ? requestAnimationFrame
-              : (cb) => cb();
+              : cb => cb();
             wrapper(() => {
               this.setState(() => ({ listText: value }));
             });
